@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"log"
 
 	"github.com/sunnygohub/simple-auth-microservice/data"
 )
@@ -14,5 +15,5 @@ type Config struct {
 }
 
 func main() {
-
+	log.Println("Starting Authentication Microservice.")
 }

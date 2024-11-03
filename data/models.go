@@ -221,6 +221,11 @@ func (u *User) ResetPassword(password string) error {
 	return nil
 }
 
+// PasswordMatches checks if the provided plain text password matches the hashed password stored in the User struct.
+//
+// plainText: the plain text password to compare.
+//
+// Returns true if the password matches, false if it doesn't, and an error if there's an issue with the comparison process.
 func (u *User) PasswordMatches(plainText string) (bool, error) {
 	err := bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(plainText))
 	if err != nil {
